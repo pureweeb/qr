@@ -30,7 +30,7 @@ export function writeUserData(message) {
     sessionStorage.setItem("message", message);
     console.log(sessionStorage.getItem("list"));
     if (message in data) {
-      window.location = "../authorize.html";
+      console.log(verfied);
     }
   });
 }
