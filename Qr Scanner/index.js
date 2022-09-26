@@ -19,9 +19,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 //export function writeUserData(userId, username, email, txt) {
-export function writeUserData(message) {
-  var data = "";
-  console.log(`successfully stored in database ${message}`);
+export function readUserData(message) {
+  const id = sessionStorage.getItem("id");
+
   var db = getDatabase();
   var refernce = ref(db, "users/");
   onValue(refernce, (snapshot) => {

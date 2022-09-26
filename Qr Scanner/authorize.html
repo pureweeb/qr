@@ -4,32 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Authorization</title>
+    <title>Document</title>
   </head>
-  <body>
-    <p></p>
-    <button id="return">return</button>
-  </body>
-  <script>
-    const button = document.getElementById("return");
-    const action = function () {
-      window.location = "qr.html";
-    };
-    button.addEventListener("click", action);
-    const list = JSON.parse(sessionStorage.getItem("list"));
-    console.log(list);
-    const p = document.querySelector("p");
-    const message = sessionStorage.getItem("message");
-    console.log(message);
-
-    if (
-      list[message].description ==
-      "https://innerve-igdtuw.com/html/hacks.html484"
-    ) {
-      p.textContent = "Authorized";
-    } else {
-      p.textContent = "Access Denied";
-      p.style.color = "red";
-    }
-  </script>
+  <body></body>
+  <script src="index.js"></script>
 </html>
