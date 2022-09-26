@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qr Scanner</title>
+    <link rel="stylesheet" href="qr.css" />
+    <link rel="shortcut icon" href="#" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="nav">
+      <span>
+        <img src="Vc_logo.png" alt="logo" id="logo" />
+        <div class="heading" id="name">Vishwa Conclave</div>
+      </span>
+    </nav>
+    <div class="row">
+      <div class="col">
+        <div id="reader"></div>
+      </div>
+    </div>
+  </body>
+
+  <script src="html5-qrcode.min.js"></script>
+
+  <script type="module" src="index.js"></script>
+
+  <script type="module">
+    function onScanSuccess(qrCodeMessage) {
+      sessionStorage.setItem("Id", qrCodeMessage);
+    }
+
+    function onScanError(errorMessage) {
+      //handle scan error
+    }
+
+    var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
+      fps: 10,
+      qrbox: 250,
+    });
+    html5QrcodeScanner.render(onScanSuccess, onScanError);
+  </script>
+</html>
